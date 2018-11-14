@@ -1,38 +1,70 @@
+import * as recommended from './config/recommended';
+import * as componentMethodsUseArrows from './rules/component-methods-use-arrows';
+import * as deprecateBound from './rules/deprecate-bound';
+import * as deprecateComponents from './rules/deprecate-components';
+import * as deprecateImports from './rules/deprecate-imports';
+import * as deprecateStateless from './rules/deprecate-stateless';
+import * as exactObjectTypes from './rules/exact-object-types';
+import * as flowAnnotate from './rules/flow-annotate';
+import * as importComponents from './rules/import-components';
+import * as importModules from './rules/import-modules';
+import * as importNavbar from './rules/import-navbar';
+import * as importOverlays from './rules/import-overlays';
+import * as importResources from './rules/import-resources';
+import * as importScreens from './rules/import-screens';
+import * as importServices from './rules/import-services';
+import * as localizationNamespace from './rules/localization-namespace';
+import * as localizationStringKey from './rules/localization-string-key';
+import * as namingComponents from './rules/naming-components';
+import * as namingOverlays from './rules/naming-overlays';
+import * as namingScreens from './rules/naming-screens';
+import * as propsNoFunction from './rules/props-no-function';
+import * as pureComponents from './rules/pure-components';
+import * as reduxTypeSelectors from './rules/redux-type-selectors';
+import * as requireTracking from './rules/require-tracking';
+import * as screenActionsPropsReturnAction from './rules/screen-actions-props-return-action';
+import * as screenActionsPropsFunction from './rules/screen-actions-props-function';
+import * as screenSelectorsPropsFunction from './rules/screen-selectors-props-function';
+import * as storiesComponents from './rules/stories-components';
+import * as storiesName from './rules/stories-name';
+import * as storiesNavbars from './rules/stories-navbars';
+import * as storiesScreens from './rules/stories-screens';
+
 const configs = {
-  recommended: require('./config/recommended'),
+  recommended,
 };
 
 const rules = {
-  'component-methods-use-arrows': require('./rules/component-methods-use-arrows'),
-  'deprecate-bound': require('./rules/deprecate-bound'),
-  'deprecate-components': require('./rules/deprecate-components'),
-  'deprecate-imports': require('./rules/deprecate-imports'),
-  'deprecate-stateless': require('./rules/deprecate-stateless'),
-  'exact-object-types': require('./rules/exact-object-types'),
-  'flow-annotate': require('./rules/flow-annotate'),
-  'import-components': require('./rules/import-components'),
-  'import-modules': require('./rules/import-modules'),
-  'import-navbar': require('./rules/import-navbar'),
-  'import-overlays': require('./rules/import-overlays'),
-  'import-resources': require('./rules/import-resources'),
-  'import-screens': require('./rules/import-screens'),
-  'import-services': require('./rules/import-services'),
-  'localization-namespace': require('./rules/localization-namespace'),
-  'localization-string-key': require('./rules/localization-string-key'),
-  'naming-components': require('./rules/naming-components'),
-  'naming-overlays': require('./rules/naming-overlays'),
-  'naming-screens': require('./rules/naming-screens'),
-  'props-no-function': require('./rules/props-no-function'),
-  'pure-components': require('./rules/pure-components'),
-  'redux-type-selectors': require('./rules/redux-type-selectors'),
-  'require-tracking': require('./rules/require-tracking'),
-  'screen-actions-props-return-action': require('./rules/screen-actions-props-return-action'),
-  'screen-actions-props-function': require('./rules/screen-actions-props-function'),
-  'screen-selectors-props-function': require('./rules/screen-selectors-props-function'),
-  'stories-components': require('./rules/stories-components'),
-  'stories-name': require('./rules/stories-name'),
-  'stories-navbars': require('./rules/stories-navbars'),
-  'stories-screens': require('./rules/stories-screens'),
+  'component-methods-use-arrows': componentMethodsUseArrows,
+  'deprecate-bound': deprecateBound,
+  'deprecate-components': deprecateComponents,
+  'deprecate-imports': deprecateImports,
+  'deprecate-stateless': deprecateStateless,
+  'exact-object-types': exactObjectTypes,
+  'flow-annotate': flowAnnotate,
+  'import-components': importComponents,
+  'import-modules': importModules,
+  'import-navbar': importNavbar,
+  'import-overlays': importOverlays,
+  'import-resources': importResources,
+  'import-screens': importScreens,
+  'import-services': importServices,
+  'localization-namespace': localizationNamespace,
+  'localization-string-key': localizationStringKey,
+  'naming-components': namingComponents,
+  'naming-overlays': namingOverlays,
+  'naming-screens': namingScreens,
+  'props-no-function': propsNoFunction,
+  'pure-components': pureComponents,
+  'redux-type-selectors': reduxTypeSelectors,
+  'require-tracking': requireTracking,
+  'screen-actions-props-return-action': screenActionsPropsReturnAction,
+  'screen-actions-props-function': screenActionsPropsFunction,
+  'screen-selectors-props-function': screenSelectorsPropsFunction,
+  'stories-components': storiesComponents,
+  'stories-name': storiesName,
+  'stories-navbars': storiesNavbars,
+  'stories-screens': storiesScreens,
 };
 
 module.exports = { configs, rules };

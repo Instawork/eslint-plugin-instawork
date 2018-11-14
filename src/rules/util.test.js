@@ -1,5 +1,3 @@
-const humps = require('humps');
-const path = require('path');
 const util = require('./util');
 
 describe('isStoryPath', () => {
@@ -28,15 +26,15 @@ describe('getExpectedStoryNameForPath', () => {
 
 describe('isStoryDeclarationNode', () => {
   it('returns true if the node is a story declaration node', () => {
-    node = {
+    const node = {
       type: 'CallExpression',
       callee: {
         type: 'Identifier',
         name: 'storiesOf',
       },
       arguments: [
-        { type: 'Literal', value: 'Screens/FooBarService' }
-      ]
+        { type: 'Literal', value: 'Screens/FooBarService' },
+      ],
     };
 
     const result = util.isStoryDeclarationNode(node);
@@ -44,7 +42,7 @@ describe('isStoryDeclarationNode', () => {
   });
 
   it('returns false if the node is not a story declaration node', () => {
-    node = {
+    const node = {
       type: 'CallExpression',
       callee: {
         type: 'Identifier',
@@ -60,15 +58,15 @@ describe('isStoryDeclarationNode', () => {
 
 describe('getStoryNameForStoryDeclarationNode', () => {
   it('returns the story name, given a story declaration node', () => {
-    node = {
+    const node = {
       type: 'CallExpression',
       callee: {
         type: 'Identifier',
         name: 'storiesOf',
       },
       arguments: [
-        { type: 'Literal', value: 'Screens/FooBarService' }
-      ]
+        { type: 'Literal', value: 'Screens/FooBarService' },
+      ],
     };
 
     const result = util.getStoryNameForStoryDeclarationNode(node);
@@ -103,4 +101,4 @@ describe('getExpectedClassNameForPath', () => {
     const result = util.getExpectedClassNameForPath('src/screens/foo-bar/zig/index.js');
     expect(result).toBe('Zig');
   });
-})
+});

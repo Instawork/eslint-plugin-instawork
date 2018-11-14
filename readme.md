@@ -1,6 +1,6 @@
-# eslint-config-instawork
+# eslint-plugin-instawork
 
-[ESLint](http://eslint.org) configuration for [Instawork projects](http://github.com/instawork)
+[ESLint](http://eslint.org) plugin with opinionated rules used at [Instawork](http://github.com/instawork)
 
 ## Quickstart
 
@@ -10,4 +10,10 @@
 {
   extends: ['instawork']
 }
+```
+
+## Tests
+
+```sh
+$ yarn && yarn test
 ```

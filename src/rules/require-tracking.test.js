@@ -1,4 +1,4 @@
-const { rules, configs } = require('..');
+const { rules } = require('..');
 const { RuleTester } = require('eslint');
 
 const ruleTester = new RuleTester();
@@ -19,7 +19,7 @@ const events: Events = {
 const withTracking = ScreenHocs.withTracking(Tracking.NAMESPACES.FOO, events);
 
 export default withTracking(FooScreen);
-`
+`;
 
 const invalidCase =
 `// @flow
@@ -28,11 +28,11 @@ import * as ScreenHocs from 'applicant-app/src/services/screen-hocs';
 import FooScreen from './presentation';
 
 export default FooScreen;
-`
+`;
 
 ruleTester.run('require-tracking', rules['require-tracking'], {
   valid: [
-    { code: validCase, parser: 'babel-eslint' }
+    { code: validCase, parser: 'babel-eslint' },
   ],
   invalid: [
     {

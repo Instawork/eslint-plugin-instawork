@@ -12,7 +12,7 @@ const BEGINNING_OF_FILE = {
   end: { line: 1, column: 0 },
 };
 
-const create = (context) => { 
+const create = (context) => {
   const filename = context.getFilename();
   let hasLoadedJson = false;
   let stringsMap = null;
@@ -23,14 +23,12 @@ const create = (context) => {
     // Ensure we don't load strings.json more than once
     if (hasLoadedJson) return;
     hasLoadedJson = true;
-  
     // Ensure that a strings.json file exists
     const stringsJsonPath = path.join(path.dirname(filename), 'strings.json');
     if (!fs.existsSync(stringsJsonPath)) {
       context.report({ message: 'missing a \'strings.json\' file', loc: BEGINNING_OF_FILE });
       return;
     }
-  
     // Ensure that the strings.json file is valid JSON
     const stringsJsonText = fs.readFileSync(stringsJsonPath, 'utf8');
     try {
@@ -39,16 +37,14 @@ const create = (context) => {
       context.report({ message: '\'strings.json\' file is invalid', loc: BEGINNING_OF_FILE });
       return;
     }
-  
     // Ensure that the strings.json file is an object
     if (!stringsMap || typeof stringsMap !== 'object') {
       context.report({
         message: '\'strings.json\' file does not contain a string map',
         loc: BEGINNING_OF_FILE,
       });
-      return;
     }
-  }
+  };
 
   return {
     CallExpression: (node) => {

@@ -1,10 +1,16 @@
 {
   "name": "eslint-plugin-instawork",
-  "version": "0.0.0",
-  "private": true,
+  "version": "0.0.1",
   "main": "src/index.js",
+  "description": "ESLint plugin with opinionated rules used at Instawork",
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin"
+  ],
+  "license": "MIT",
   "scripts": {
-    "test": "jest"
+    "test": "eslint . && jest"
   },
   "dependencies": {
     "eslint-config-airbnb": "14.1.0",
@@ -21,7 +27,8 @@
   },
   "devDependencies": {
     "babel-eslint": "8.2.1",
-    "eslint": "4.16.0",
-    "jest": "22.1.4"
+    "babel-preset-env": "1.7.0",
+    "eslint": "4.17.0",
+    "jest": "23.1.0"
   }
 }
