@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# Run this script after importing eslint-plugin-instawork, in order to remove extraneous files
+rm -rf \
+  node_modules/eslint-plugin-instawork/.babelrc \
+  node_modules/eslint-plugin-instawork/*.test.js \
+  node_modules/eslint-plugin-instawork/**/*.test.js \
+  node_modules/eslint-plugin-instawork/node_modules \
+  node_modules/eslint-plugin-instawork/test \
+  node_modules/eslint-plugin-instawork/README.md
