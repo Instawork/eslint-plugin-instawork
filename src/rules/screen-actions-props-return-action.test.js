@@ -23,7 +23,7 @@ ruleTester.run('screen-actions-props-return-action', rule, {
     },
     {
       code: 'type ActionMap = { foo: () => void }',
-      errors: [{ message: 'must return Action', column: 32, line: 1 }],
+      errors: [{ message: 'must return Action', column: 31, line: 1 }],
       parser: 'babel-eslint',
     },
   ],
