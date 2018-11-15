@@ -71,35 +71,6 @@ const rules = {
       ],
     },
   ],
-  'import/no-internal-modules': [
-    'warn', {
-      allow: [
-        '@storybook/addon-actions/register',
-        '@storybook/addon-links/register',
-        'applicant-app/**',
-        'business-app/**',
-        'core-mobile-dev/**',
-        'core-mobile/**',
-        'moment/locale/*',
-        'raven-js/plugins/react-native',
-        'react-native-fbsdk/js/FBAppEventsLogger',
-        'react-native/Libraries/StyleSheet/StyleSheetTypes',
-        'redux-saga/effects',
-      ],
-    },
-  ],
-  'instawork/deprecate-imports': [
-    'warn', [
-      { path: 'core-mobile/colors', reason: 'For consistency, import the module you want directly (a-la applicant app)' },
-      { path: 'core-mobile/components', reason: 'For consistency, import the module you want directly (a-la applicant app)' },
-      { path: 'core-mobile/modules', reason: 'For consistency, import the module you want directly (a-la applicant app)' },
-      { path: 'core-mobile/storybook-decorators', reason: 'For consistency, import the module you want directly (a-la applicant app)' },
-      { path: 'core-mobile/styles', reason: 'For consistency, import the module you want directly (a-la applicant app)' },
-      { path: /^business-app\/src\/components\/app$/, reason: 'The app/base component separation is an outdated convention' },
-      { path: /^business-app\/src\/components\/base$/, reason: 'The app/base component separation is an outdated convention' },
-      { path: /^business-app\/src\/components$/, reason: 'For consistency, import the module you want directly (a-la applicant app)' },
-    ],
-  ],
 };
 
 // "extends" is an existing keyword, and so we use "extend$"

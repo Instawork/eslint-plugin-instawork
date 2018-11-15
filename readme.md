@@ -1,6 +1,6 @@
 # eslint-plugin-instawork
 
-[ESLint](http://eslint.org) plugin with opinionated rules used at [Instawork](http://github.com/instawork)
+[ESLint](http://eslint.org) plugin with opinionated rules used on [Instawork](https://www.instawork.com) mobile apps and libraries.
 
 ## Quickstart
 
