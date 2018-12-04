@@ -25,9 +25,11 @@ const rules = {
   'instawork/screen-actions-props-return-action': 'error',
   'instawork/screen-actions-props-function': 'error',
   'instawork/screen-selectors-props-function': 'error',
+  'sort-keys': 'warn',
   'sort-imports': 'error',
   curly: ['error', 'all'],
   'brace-style': ['error', '1tbs', { allowSingleLine: false }],
+  'react/jsx-sort-props': 'warn',
 
   // These should be "error", but are now set to "warn" until we fix linting issues in all projects
   'instawork/deprecate-bound': 'warn',
