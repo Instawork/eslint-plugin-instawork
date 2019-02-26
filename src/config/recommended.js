@@ -73,16 +73,24 @@ const rules = {
       ],
     },
   ],
+
+  'prettier/prettier': 'error',
 };
 
 // "extends" is an existing keyword, and so we use "extend$"
 const extend$ = [
   'airbnb',
   'plugin:flowtype/recommended',
+  'prettier',
+  'plugin:prettier/recommended',
+  'prettier/flowtype',
+  'prettier/react',
+  'prettier/standard',
 ];
 
 const plugins = [
   'flowtype',
+  'prettier',
 ];
 
 const env = {
