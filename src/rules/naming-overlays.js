@@ -1,3 +1,5 @@
+// @flow
+
 const util = require('./util');
 
 const PATH_REGEX = /\/src\/overlays\/([^/]+?)\/presentation.js$/i;
@@ -9,14 +11,16 @@ const meta = {
   },
 };
 
-const create = (context) => {
+const create = context => {
   const matches = context.getFilename().match(PATH_REGEX);
-  if (!matches) return {};
+  if (!matches) {
+    return {};
+  }
 
   const expectedClassName = util.getExpectedClassName(matches[1], SUFFIX);
 
   return {
-    ClassDeclaration: (node) => {
+    ClassDeclaration: node => {
       const className = node.id.name;
       if (className !== expectedClassName) {
         context.report(node.id, `'${className}' must be named ${expectedClassName}`);

@@ -1,3 +1,5 @@
+// @flow
+
 const configs = {
   recommended: require('./config/recommended'),
 };
@@ -25,8 +27,8 @@ const rules = {
   'props-no-function': require('./rules/props-no-function'),
   'pure-components': require('./rules/pure-components'),
   'redux-type-selectors': require('./rules/redux-type-selectors'),
-  'screen-actions-props-return-action': require('./rules/screen-actions-props-return-action'),
   'screen-actions-props-function': require('./rules/screen-actions-props-function'),
+  'screen-actions-props-return-action': require('./rules/screen-actions-props-return-action'),
   'screen-selectors-props-function': require('./rules/screen-selectors-props-function'),
   'stories-components': require('./rules/stories-components'),
   'stories-name': require('./rules/stories-name'),

@@ -1,3 +1,5 @@
+// @flow
+
 const NAME_REGEX = /^Component$/i;
 
 const meta = {
@@ -6,9 +8,11 @@ const meta = {
   },
 };
 
-const getSuperclassName = (classExpressionNode) => {
+const getSuperclassName = classExpressionNode => {
   const { superClass } = classExpressionNode;
-  if (!superClass) return null;
+  if (!superClass) {
+    return null;
+  }
 
   if (superClass.type === 'MemberExpression') {
     return superClass.property.name;
@@ -20,12 +24,15 @@ const getSuperclassName = (classExpressionNode) => {
 };
 
 const create = context => ({
-  ClassDeclaration: (node) => {
+  ClassDeclaration: node => {
     const superclassName = getSuperclassName(node);
 
     if (superclassName && NAME_REGEX.test(superclassName)) {
       const className = node.id.name;
-      context.report(node.superClass, `'${className}' should extend PureComponent instead of Component`);
+      context.report(
+        node.superClass,
+        `'${className}' should extend PureComponent instead of Component`,
+      );
     }
   },
 });

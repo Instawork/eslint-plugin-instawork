@@ -1,3 +1,5 @@
+// @flow
+
 const fs = require('fs');
 const path = require('path');
 
@@ -10,20 +12,22 @@ const meta = {
   },
 };
 
-const create = (context) => {
+const create = context => {
   const filepath = context.getFilename();
-  if (!PATH_REGEX.test(filepath)) return {};
+  if (!PATH_REGEX.test(filepath)) {
+    return {};
+  }
 
   const dirname = path.dirname(filepath);
   const storyPath = path.join(dirname, EXPECTED_FILENAME);
 
   if (!fs.existsSync(storyPath)) {
     context.report({
-      message: `'${filepath}' must have an accompanying '${EXPECTED_FILENAME}' file`,
       loc: {
-        start: { line: 1, col: 0 },
-        end: { line: 1, col: 0 },
+        end: { col: 0, line: 1 },
+        start: { col: 0, line: 1 },
       },
+      message: `'${filepath}' must have an accompanying '${EXPECTED_FILENAME}' file`,
     });
   }
 
