@@ -1,3 +1,5 @@
+// @flow
+
 const DEPRECATED_COMPONENT_REGEX = /^(downlayout|rightlayout|uplayout|leftlayout|label)$/i;
 
 const meta = {
@@ -7,7 +9,7 @@ const meta = {
 };
 
 const create = context => ({
-  JSXOpeningElement: (node) => {
+  JSXOpeningElement: node => {
     const componentName = node.name.name;
 
     if (DEPRECATED_COMPONENT_REGEX.test(componentName)) {

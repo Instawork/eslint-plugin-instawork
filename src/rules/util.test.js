@@ -1,3 +1,5 @@
+// @flow
+
 const util = require('./util');
 
 describe('isStoryPath', () => {
@@ -27,14 +29,12 @@ describe('getExpectedStoryNameForPath', () => {
 describe('isStoryDeclarationNode', () => {
   it('returns true if the node is a story declaration node', () => {
     const node = {
-      type: 'CallExpression',
+      arguments: [{ type: 'Literal', value: 'Screens/FooBarService' }],
       callee: {
-        type: 'Identifier',
         name: 'storiesOf',
+        type: 'Identifier',
       },
-      arguments: [
-        { type: 'Literal', value: 'Screens/FooBarService' },
-      ],
+      type: 'CallExpression',
     };
 
     const result = util.isStoryDeclarationNode(node);
@@ -43,12 +43,12 @@ describe('isStoryDeclarationNode', () => {
 
   it('returns false if the node is not a story declaration node', () => {
     const node = {
-      type: 'CallExpression',
-      callee: {
-        type: 'Identifier',
-        name: 'foobar',
-      },
       arguments: [],
+      callee: {
+        name: 'foobar',
+        type: 'Identifier',
+      },
+      type: 'CallExpression',
     };
 
     const result = util.isStoryDeclarationNode(node);
@@ -59,14 +59,12 @@ describe('isStoryDeclarationNode', () => {
 describe('getStoryNameForStoryDeclarationNode', () => {
   it('returns the story name, given a story declaration node', () => {
     const node = {
-      type: 'CallExpression',
+      arguments: [{ type: 'Literal', value: 'Screens/FooBarService' }],
       callee: {
-        type: 'Identifier',
         name: 'storiesOf',
+        type: 'Identifier',
       },
-      arguments: [
-        { type: 'Literal', value: 'Screens/FooBarService' },
-      ],
+      type: 'CallExpression',
     };
 
     const result = util.getStoryNameForStoryDeclarationNode(node);

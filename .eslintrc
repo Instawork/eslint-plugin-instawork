@@ -1,7 +1,6 @@
 {
-  "extends": [
-    "airbnb"
-  ],
+  "extends": "plugin:instawork/recommended",
+  "plugins": [ "instawork" ],
   "env": {
     "jest": true,
     "node": true
