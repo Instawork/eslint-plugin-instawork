@@ -55,6 +55,7 @@ const errorRules = {
   'instawork/naming-screens': 'error',
   'instawork/props-no-function': 'warn',
   'instawork/redux-type-selectors': 'error',
+  'instawork/rn-list-clip-subviews': 'error',
   'instawork/screen-actions-props-function': 'error',
   'instawork/screen-actions-props-return-action': 'error',
   'instawork/screen-selectors-props-function': 'error',
