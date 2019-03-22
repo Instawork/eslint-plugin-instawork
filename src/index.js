@@ -27,6 +27,7 @@ const rules = {
   'props-no-function': require('./rules/props-no-function'),
   'pure-components': require('./rules/pure-components'),
   'redux-type-selectors': require('./rules/redux-type-selectors'),
+  'rn-list-clip-subviews': require('./rules/rn-list-clip-subviews'),
   'screen-actions-props-function': require('./rules/screen-actions-props-function'),
   'screen-actions-props-return-action': require('./rules/screen-actions-props-return-action'),
   'screen-selectors-props-function': require('./rules/screen-selectors-props-function'),
