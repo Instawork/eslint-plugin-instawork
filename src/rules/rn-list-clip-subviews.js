@@ -17,7 +17,7 @@ const isList = node => {
 };
 
 const getAttributes = node => {
-  return node.parent.attributes;
+  return node.parent.attributes.filter(attr => attr.type === 'JSXAttribute');
 };
 
 const findPreviousAttribute = attributes => {
