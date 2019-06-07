@@ -1,7 +1,7 @@
 // @flow
 
-const rule = require('./screen-selectors-props-function');
 const { RuleTester } = require('eslint');
+const rule = require('./screen-selectors-props-function');
 
 const ruleTester = new RuleTester();
 

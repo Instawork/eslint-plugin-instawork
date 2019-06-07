@@ -1,7 +1,7 @@
 // @flow
 
-const rule = require('./screen-actions-props-return-action');
 const { RuleTester } = require('eslint');
+const rule = require('./screen-actions-props-return-action');
 
 const ruleTester = new RuleTester();
 
