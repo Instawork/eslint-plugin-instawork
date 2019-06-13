@@ -21,7 +21,8 @@ const getSuperclassName = classDeclarationNode => {
 
   if (superClass.type === 'MemberExpression') {
     return superClass.property.name;
-  } else if (superClass.type === 'Identifier') {
+  }
+  if (superClass.type === 'Identifier') {
     return superClass.name;
   }
 

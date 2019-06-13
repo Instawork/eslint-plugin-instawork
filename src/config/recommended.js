@@ -5,6 +5,13 @@ const disabledRules = {
   'import/extensions': 'off',
   'import/first': 'off',
   'import/no-unresolved': 'off',
+
+  // Added in 0.4.0 after updating dependencies
+  // This conflicts with the rule sort-imports
+  // We should figure out which one is the most relevant
+  // https://app.asana.com/0/474532500889635/1126294696598145/f
+  'import/order': 'off',
+
   'import/prefer-default-export': 'off',
 
   // Forcing tracking everywhere is probably not a good idea; it adds maintenance for not much
@@ -67,11 +74,28 @@ const errorRules = {
     },
   ],
   'no-underscore-dangle': 'error',
+  'prefer-destructuring': [
+    'error',
+    {
+      AssignmentExpression: {
+        array: true,
+        object: false,
+      },
+      VariableDeclarator: {
+        array: true,
+        object: true,
+      },
+    },
+    {
+      enforceForRenamedProperties: false,
+    },
+  ],
   'prettier/prettier': 'error',
   'sort-imports': 'error',
 };
 
 // These should be "error", but are now set to "warn" until we fix linting issues in all projects
+// https://app.asana.com/0/426551029573976/1112529141606707/f
 const warningRules = {
   'instawork/deprecate-components': 'warn',
   'instawork/deprecate-stateless': 'warn',
@@ -81,6 +105,7 @@ const warningRules = {
   'instawork/stories-components': 'warn',
   'instawork/stories-navbars': 'warn',
   'instawork/stories-screens': 'warn',
+  'react/destructuring-assignment': ['error', 'never'],
   'react/jsx-sort-props': 'warn',
   'sort-keys': 'warn',
 };
