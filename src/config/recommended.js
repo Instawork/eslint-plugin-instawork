@@ -79,7 +79,7 @@ const errorRules = {
     {
       AssignmentExpression: {
         array: true,
-        object: false,
+        object: true,
       },
       VariableDeclarator: {
         array: true,
