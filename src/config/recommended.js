@@ -105,7 +105,7 @@ const warningRules = {
   'instawork/stories-components': 'warn',
   'instawork/stories-navbars': 'warn',
   'instawork/stories-screens': 'warn',
-  'react/destructuring-assignment': ['error', 'never'],
+  'react/destructuring-assignment': ['warn', 'never'],
   'react/jsx-sort-props': 'warn',
   'sort-keys': 'warn',
 };
