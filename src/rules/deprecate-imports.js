@@ -14,7 +14,7 @@ const meta = {
 };
 
 const create = context => {
-  const deprecationOptions = context.options[0];
+  const [deprecationOptions] = context.options;
 
   return {
     ImportDeclaration: importDeclaration => {
