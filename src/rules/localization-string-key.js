@@ -74,7 +74,7 @@ const create = context => {
         return;
       }
 
-      const firstArgument = args[0];
+      const [firstArgument] = args;
 
       // Attempt to load strings.json
       loadStringJson();

@@ -74,6 +74,22 @@ const errorRules = {
     },
   ],
   'no-underscore-dangle': 'error',
+  'prefer-destructuring': [
+    'error',
+    {
+      AssignmentExpression: {
+        array: true,
+        object: true,
+      },
+      VariableDeclarator: {
+        array: true,
+        object: true,
+      },
+    },
+    {
+      enforceForRenamedProperties: false,
+    },
+  ],
   'prettier/prettier': 'error',
   'sort-imports': 'error',
 };

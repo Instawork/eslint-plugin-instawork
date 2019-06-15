@@ -12,7 +12,7 @@ const meta = {
 };
 
 const create = context => {
-  const projectName = context.options[0];
+  const [projectName] = context.options;
   if (!projectName) {
     return {};
   }
@@ -46,7 +46,7 @@ const create = context => {
       }
 
       // Figure out what the localization namespace should be
-      const category = filenameComponents[1];
+      const [, category] = filenameComponents;
       const name = filenameComponents[2].replace(/\//g, ':');
       const expectedNamespace = `${projectName}:${category}:${name}`;
 
