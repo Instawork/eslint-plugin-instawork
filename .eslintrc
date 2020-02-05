@@ -6,6 +6,7 @@
     "node": true
   },
   "rules": {
+    "instawork/error-object": 0,
     "global-require": 0
   }
 }

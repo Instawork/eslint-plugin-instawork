@@ -143,3 +143,19 @@ module.exports.isStoryDeclarationNode = node =>
 
 /** Given a story declaration node, returns the story name */
 module.exports.getStoryNameForStoryDeclarationNode = node => node.arguments[0].value;
+
+module.exports.getSuperclassName = classExpressionNode => {
+  const { superClass } = classExpressionNode;
+  if (!superClass) {
+    return null;
+  }
+
+  if (superClass.type === 'MemberExpression') {
+    return superClass.property.name;
+  }
+  if (superClass.type === 'Identifier') {
+    return superClass.name;
+  }
+
+  throw new Error(`Unexpected superClass type: ${superClass.type}`);
+};
