@@ -10,6 +10,7 @@ const rules = {
   'deprecate-components': require('./rules/deprecate-components'),
   'deprecate-imports': require('./rules/deprecate-imports'),
   'deprecate-stateless': require('./rules/deprecate-stateless'),
+  'error-object': require('./rules/error-object'),
   'exact-object-types': require('./rules/exact-object-types'),
   'flow-annotate': require('./rules/flow-annotate'),
   'import-components': require('./rules/import-components'),

@@ -1,5 +1,7 @@
 // @flow
 
+const util = require('./util');
+
 const NAME_REGEX = /^Component$/i;
 
 const meta = {
@@ -8,25 +10,9 @@ const meta = {
   },
 };
 
-const getSuperclassName = classExpressionNode => {
-  const { superClass } = classExpressionNode;
-  if (!superClass) {
-    return null;
-  }
-
-  if (superClass.type === 'MemberExpression') {
-    return superClass.property.name;
-  }
-  if (superClass.type === 'Identifier') {
-    return superClass.name;
-  }
-
-  throw new Error(`Unexpected superClass type: ${superClass.type}`);
-};
-
 const create = context => ({
   ClassDeclaration: node => {
-    const superclassName = getSuperclassName(node);
+    const superclassName = util.getSuperclassName(node);
 
     if (superclassName && NAME_REGEX.test(superclassName)) {
       const className = node.id.name;

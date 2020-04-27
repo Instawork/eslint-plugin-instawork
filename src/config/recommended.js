@@ -50,6 +50,7 @@ const errorRules = {
   ],
   'instawork/component-methods-use-arrows': 'error',
   'instawork/deprecate-bound': 'error',
+  'instawork/error-object': 'error',
   'instawork/exact-object-types': 'error',
   'instawork/flow-annotate': 'error',
   'instawork/import-components': 'error',
