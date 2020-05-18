@@ -19,8 +19,19 @@ const create = context => ({
     }
     if (superclassName && /^IWBaseError$/.test(superclassName)) {
       const [, prefix, baseName, suffix] = className.match(/^(IW)?(.+?)(Error)?$/);
+      const expectedName = `IW${baseName}Error`;
       if (!prefix || !suffix) {
-        context.report(node, `'${className}' should be named 'IW${baseName}Error'`);
+        context.report(node, `'${className}' should be named '${expectedName}'`);
+      } else {
+        const namePropertyNode = node.body.body.find(
+          n => n.type === 'ClassProperty' && n.key.name === 'name',
+        );
+        if (!namePropertyNode || namePropertyNode.value.value !== className) {
+          context.report(
+            node,
+            `'${className}' should have an instance property 'name' set to '${expectedName}'`,
+          );
+        }
       }
     }
   },
