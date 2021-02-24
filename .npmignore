@@ -4,5 +4,4 @@
 .eslintrc
 .gitignore
 node_modules/
-src/
 yarn-error.log

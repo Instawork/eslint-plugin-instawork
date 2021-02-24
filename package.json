@@ -15,7 +15,6 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "babel src --out-dir lib",
     "prettify": "pretty-quick --staged",
     "preversion": "yarn test",
     "postversion": "yarn publish --new-version $npm_package_version && git push --follow-tags",
@@ -43,7 +42,6 @@
     "react": "17.0.1"
   },
   "devDependencies": {
-    "@babel/cli": "7.13.0",
     "@babel/core": "7.13.1",
     "@babel/eslint-parser": "7.13.4",
     "@babel/preset-env": "7.13.5",
