@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-instawork",
-  "version": "0.6.1",
+  "version": "0.9.2",
   "main": "src/index.js",
   "description": "ESLint plugin with opinionated rules used at Instawork",
   "keywords": [
@@ -8,6 +8,7 @@
     "eslintplugin",
     "eslint-plugin"
   ],
+  "registry": "https://registry.npmjs.org/",
   "repository": {
     "type": "git",
     "url": "https://github.com/Instawork/eslint-plugin-instawork"
@@ -16,10 +17,11 @@
   "scripts": {
     "build": "babel src --out-dir lib",
     "prettify": "pretty-quick --staged",
-    "release:prerelease": "yarn version prerelease && yarn publish && git push --follow-tags",
-    "release:patch": "yarn version patch && yarn publish && git push --follow-tags",
-    "release:minor": "yarn version minor && yarn publish && git push --follow-tags",
-    "release:major": "yarn version major && yarn publish && git push --follow-tags",
+    "preversion": "yarn test",
+    "postversion": "yarn publish --new-version $npm_package_version && git push --follow-tags",
+    "release:patch": "yarn version --patch",
+    "release:minor": "yarn version --minor",
+    "release:major": "yarn version --major",
     "test": "eslint src --max-warnings 0 && jest src"
   },
   "dependencies": {
