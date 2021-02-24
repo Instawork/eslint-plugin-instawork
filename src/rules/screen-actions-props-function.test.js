@@ -10,23 +10,23 @@ ruleTester.run('screen-actions-props-function', rule, {
     {
       code: 'type Actions = { foo: * }',
       errors: [{ column: 18, line: 1, message: 'must be a function' }],
-      parser: 'babel-eslint',
+      parser: require.resolve('babel-eslint'),
     },
     {
       code: 'type ActionsMap = { foo: * }',
       errors: [{ column: 21, line: 1, message: 'must be a function' }],
-      parser: 'babel-eslint',
+      parser: require.resolve('babel-eslint'),
     },
     {
       code: 'type ActionMap = { foo: * }',
       errors: [{ column: 20, line: 1, message: 'must be a function' }],
-      parser: 'babel-eslint',
+      parser: require.resolve('babel-eslint'),
     },
   ],
   valid: [
     {
       code: 'type Actions = { foo: () => Action }',
-      parser: 'babel-eslint',
+      parser: require.resolve('babel-eslint'),
     },
   ],
 });
