@@ -10,8 +10,8 @@ const meta = {
   },
 };
 
-const create = context => ({
-  ClassDeclaration: node => {
+const create = (context) => ({
+  ClassDeclaration: (node) => {
     const className = node.id.name;
     const superclassName = util.getSuperclassName(node);
     if (superclassName && /^Error$/.test(superclassName)) {
@@ -24,7 +24,7 @@ const create = context => ({
         context.report(node, `'${className}' should be named '${expectedName}'`);
       } else {
         const namePropertyNode = node.body.body.find(
-          n => n.type === 'ClassProperty' && n.key.name === 'name',
+          (n) => n.type === 'ClassProperty' && n.key.name === 'name',
         );
         if (!namePropertyNode || namePropertyNode.value.value !== className) {
           context.report(
@@ -35,7 +35,7 @@ const create = context => ({
       }
     }
   },
-  'NewExpression > Identifier': node => {
+  'NewExpression > Identifier': (node) => {
     if (node.name === 'Error') {
       context.report({
         loc: node.loc,

@@ -13,7 +13,7 @@ const meta = {
   },
 };
 
-const getSuperclassName = classDeclarationNode => {
+const getSuperclassName = (classDeclarationNode) => {
   const { superClass } = classDeclarationNode;
   if (!superClass) {
     return null;
@@ -29,13 +29,13 @@ const getSuperclassName = classDeclarationNode => {
   throw new Error(`Unexpected superClass type: ${superClass.type}`);
 };
 
-const isComponentClass = classDeclarationNode => {
+const isComponentClass = (classDeclarationNode) => {
   const superclassName = getSuperclassName(classDeclarationNode);
   return COMPONENT_SUPERCLASS_REGEX.test(superclassName);
 };
 
-const create = context => ({
-  ClassDeclaration: node => {
+const create = (context) => ({
+  ClassDeclaration: (node) => {
     const className = node.id.name;
     if (!isComponentClass(node)) {
       return;
@@ -45,7 +45,7 @@ const create = context => ({
       context.report(node.id, ERROR_MESSAGE);
     }
   },
-  TypeAlias: node => {
+  TypeAlias: (node) => {
     const typeName = node.id.name;
 
     if (DEPRECATED_TYPE_NAME_REGEX.test(typeName)) {

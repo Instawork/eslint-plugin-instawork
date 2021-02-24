@@ -10,8 +10,8 @@ const meta = {
   },
 };
 
-const create = context => ({
-  ClassDeclaration: node => {
+const create = (context) => ({
+  ClassDeclaration: (node) => {
     const superclassName = util.getSuperclassName(node);
 
     if (superclassName && NAME_REGEX.test(superclassName)) {

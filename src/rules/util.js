@@ -4,12 +4,12 @@ const humps = require('humps');
 const path = require('path');
 
 /** Hacky way to pluralize an English word */
-const pluralizeString = str => `${str}s`;
+const pluralizeString = (str) => `${str}s`;
 
 /** Hacky way to singularize an English word */
-const singularizeString = str => str.replace(/s$/i, '');
+const singularizeString = (str) => str.replace(/s$/i, '');
 
-const capitalizeString = str => str.charAt(0).toUpperCase() + str.slice(1);
+const capitalizeString = (str) => str.charAt(0).toUpperCase() + str.slice(1);
 
 /** Returns the import statement (a string) given an ImportDeclaration node and ESLint context */
 module.exports.getImportStatement = (importDeclarationNode, context) =>
@@ -30,7 +30,7 @@ module.exports.getExpectedClassName = (dir, suffixes) => {
   }
 
   if (suffixes.map) {
-    return suffixes.map(suffix => capitalized + suffix);
+    return suffixes.map((suffix) => capitalized + suffix);
   }
 
   return capitalized + suffixes;
@@ -105,13 +105,13 @@ module.exports.isDefaultImport = (importDeclarationNode, expectedNames) => {
 };
 
 /** Returns whether or not a path points to a story file */
-module.exports.isStoryPath = filepath =>
+module.exports.isStoryPath = (filepath) =>
   !!filepath &&
   typeof filepath === 'string' &&
   !!path.basename(filepath).match(/^(.+\.)?stories.js$/i);
 
 /** Returns the expected class name (based on Instawork conventions) given a path */
-module.exports.getExpectedClassNameForPath = filepath => {
+module.exports.getExpectedClassNameForPath = (filepath) => {
   const entityType = module.exports.getEntityTypeForPath(filepath);
   const isRootEntity = !!filepath.match(/(\/|^)src\/([^/]+)\/([^/]+)\/([^/]+)$/i);
   const baseClassName = capitalizeString(humps.camelize(path.basename(path.dirname(filepath))));
@@ -122,18 +122,18 @@ module.exports.getExpectedClassNameForPath = filepath => {
 };
 
 /** Given a filepath, returns the entity type (e.g. screen, service, navbar) */
-module.exports.getEntityTypeForPath = filepath =>
+module.exports.getEntityTypeForPath = (filepath) =>
   singularizeString(filepath.match(/(\/|^)src\/(.+?)\//i)[2]);
 
 /** Given a filepath, returns the expected Storybook entry name */
-module.exports.getExpectedStoryNameForPath = filepath => {
+module.exports.getExpectedStoryNameForPath = (filepath) => {
   const entityType = capitalizeString(module.exports.getEntityTypeForPath(filepath));
   const className = module.exports.getExpectedClassNameForPath(filepath);
   return `${pluralizeString(entityType)}/${className}`;
 };
 
 /** Returns whether or not an ESPrima node is a story declaration (i.e. `storiesOf(...)`) */
-module.exports.isStoryDeclarationNode = node =>
+module.exports.isStoryDeclarationNode = (node) =>
   !!node &&
   node.type === 'CallExpression' &&
   node.callee.type === 'Identifier' &&
@@ -142,9 +142,9 @@ module.exports.isStoryDeclarationNode = node =>
   node.arguments[0].type === 'Literal';
 
 /** Given a story declaration node, returns the story name */
-module.exports.getStoryNameForStoryDeclarationNode = node => node.arguments[0].value;
+module.exports.getStoryNameForStoryDeclarationNode = (node) => node.arguments[0].value;
 
-module.exports.getSuperclassName = classExpressionNode => {
+module.exports.getSuperclassName = (classExpressionNode) => {
   const { superClass } = classExpressionNode;
   if (!superClass) {
     return null;

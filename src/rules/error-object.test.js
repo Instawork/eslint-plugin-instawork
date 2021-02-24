@@ -3,7 +3,10 @@
 const { RuleTester } = require('eslint');
 const rule = require('./error-object');
 
-const ruleTester = new RuleTester({ parser: 'babel-eslint', parserOptions: { ecmaVersion: 2015 } });
+const ruleTester = new RuleTester({
+  parser: require.resolve('babel-eslint'),
+  parserOptions: { ecmaVersion: 2015 },
+});
 
 ruleTester.run('error-object', rule, {
   invalid: [

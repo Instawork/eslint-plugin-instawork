@@ -123,9 +123,6 @@ const extend$ = [
   'plugin:flowtype/recommended',
   'prettier',
   'plugin:prettier/recommended',
-  'prettier/flowtype',
-  'prettier/react',
-  'prettier/standard',
 ];
 
 const plugins = ['flowtype', 'prettier'];

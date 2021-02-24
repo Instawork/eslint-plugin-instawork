@@ -14,7 +14,7 @@ const BEGINNING_OF_FILE = {
   start: { column: 0, line: 1 },
 };
 
-const create = context => {
+const create = (context) => {
   const filename = context.getFilename();
   let hasLoadedJson = false;
   let stringsMap = null;
@@ -59,7 +59,7 @@ const create = context => {
   };
 
   return {
-    CallExpression: node => {
+    CallExpression: (node) => {
       const { callee } = node;
       const args = node.arguments;
 

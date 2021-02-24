@@ -11,7 +11,7 @@ const meta = {
   },
 };
 
-const create = context => {
+const create = (context) => {
   const matches = context.getFilename().match(PATH_REGEX);
   if (!matches) {
     return {};
@@ -20,7 +20,7 @@ const create = context => {
   const expectedClassName = util.getExpectedClassName(matches[1], SUFFIX);
 
   return {
-    ClassDeclaration: node => {
+    ClassDeclaration: (node) => {
       const className = node.id.name;
       if (className !== expectedClassName) {
         context.report(node.id, `'${className}' must be named ${expectedClassName}`);

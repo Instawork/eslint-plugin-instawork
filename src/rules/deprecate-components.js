@@ -8,8 +8,8 @@ const meta = {
   },
 };
 
-const create = context => ({
-  JSXOpeningElement: node => {
+const create = (context) => ({
+  JSXOpeningElement: (node) => {
     const componentName = node.name.name;
 
     if (DEPRECATED_COMPONENT_REGEX.test(componentName)) {
