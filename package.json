@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-instawork",
-  "version": "0.9.2",
+  "version": "0.10.0",
   "main": "src/index.js",
   "description": "ESLint plugin with opinionated rules used at Instawork",
   "keywords": [
