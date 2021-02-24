@@ -8,8 +8,8 @@ const meta = {
   },
 };
 
-const create = context => ({
-  ClassProperty: node => {
+const create = (context) => ({
+  ClassProperty: (node) => {
     const propertyName = node.key.name;
 
     if (NAME_REGEX.test(propertyName)) {

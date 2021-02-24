@@ -10,8 +10,8 @@ const meta = {
   },
 };
 
-const create = context => ({
-  ImportDeclaration: node => {
+const create = (context) => ({
+  ImportDeclaration: (node) => {
     if (!util.isImportingPath(node, IMPORT_PATH_REGEX)) {
       return;
     }

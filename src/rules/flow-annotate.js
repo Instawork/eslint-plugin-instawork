@@ -7,14 +7,14 @@ const meta = {
   fixable: 'code',
 };
 
-const create = context => {
+const create = (context) => {
   const filepath = context.getFilename();
   if (!filepath.match(/(src|test)\//)) {
     return {};
   }
 
   return {
-    Program: node => {
+    Program: (node) => {
       const source = context.getSourceCode().getText();
 
       // Ensure that a '// @flow' exists
@@ -22,7 +22,7 @@ const create = context => {
         return;
       }
 
-      const addFlowAnnotation = fixer => fixer.replaceText(node, `// @flow\n\n${source}`);
+      const addFlowAnnotation = (fixer) => fixer.replaceText(node, `// @flow\n\n${source}`);
 
       context.report({
         fix: addFlowAnnotation,

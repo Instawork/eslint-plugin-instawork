@@ -8,7 +8,7 @@ const meta = {
   },
 };
 
-const create = context => {
+const create = (context) => {
   const filepath = context.getFilename();
 
   if (!util.isStoryPath(filepath)) {
@@ -16,7 +16,7 @@ const create = context => {
   }
 
   return {
-    CallExpression: node => {
+    CallExpression: (node) => {
       if (util.isStoryDeclarationNode(node)) {
         const actualStoryName = util.getStoryNameForStoryDeclarationNode(node);
         const expectedStoryName = util.getExpectedStoryNameForPath(filepath);

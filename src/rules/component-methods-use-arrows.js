@@ -12,7 +12,7 @@ const meta = {
   fixable: 'code',
 };
 
-const isComponentClassDeclaration = node => {
+const isComponentClassDeclaration = (node) => {
   if (node.type !== 'ClassDeclaration') {
     return false;
   }
@@ -28,8 +28,8 @@ const isComponentClassDeclaration = node => {
   );
 };
 
-const create = context => ({
-  MethodDefinition: node => {
+const create = (context) => ({
+  MethodDefinition: (node) => {
     if (!isComponentClassDeclaration(node.parent.parent)) {
       return;
     }
@@ -45,7 +45,7 @@ const create = context => ({
 
     // A crude way to convert regular functions into arrow functions, using regex. Only works for
     // functions where the signature is defined within a single line.
-    const fix = fixer => {
+    const fix = (fixer) => {
       const methodSource = context.getSourceCode().getText(node);
       const fixedMethodSource = methodSource.replace(
         /^(.+?)\s*\((.*?)\)\s*(:.+?)?\s*?{/,

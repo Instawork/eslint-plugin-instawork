@@ -13,11 +13,11 @@ const meta = {
   },
 };
 
-const create = context => {
+const create = (context) => {
   const [deprecationOptions] = context.options;
 
   return {
-    ImportDeclaration: importDeclaration => {
+    ImportDeclaration: (importDeclaration) => {
       const { source } = importDeclaration;
 
       if (source.type !== 'Literal') {
@@ -26,7 +26,7 @@ const create = context => {
 
       const importPath = source.value;
 
-      deprecationOptions.find(deprecationOption => {
+      deprecationOptions.find((deprecationOption) => {
         if (importPath.match(deprecationOption.path)) {
           context.report(
             importDeclaration,

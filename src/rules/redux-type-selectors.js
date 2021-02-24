@@ -9,8 +9,8 @@ const meta = {
   },
 };
 
-const create = context => ({
-  TypeAnnotation: node => {
+const create = (context) => ({
+  TypeAnnotation: (node) => {
     const typeName = node.typeAnnotation.id ? node.typeAnnotation.id.name : null;
     const hasParams = !!node.typeAnnotation.typeParameters;
 

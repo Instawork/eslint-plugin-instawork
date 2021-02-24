@@ -11,14 +11,14 @@ const TYPE_NAME_REGEX = /((Action|Event|Selector)s?Map|Props|Attributes|Relation
 const TYPE_NAME_EXCLUDE_REGEX = /^(RootState|PartialState|PartialAttributes|SelectionState)$/;
 const SERVICES_PATH_REGEX = /src\/services/i;
 
-const create = context => {
+const create = (context) => {
   const sourcePath = context.getFilename();
   if (sourcePath.match(SERVICES_PATH_REGEX)) {
     return {};
   }
 
   return {
-    TypeAlias: node => {
+    TypeAlias: (node) => {
       const typeName = node.id.name;
       const typeDefinition = node.right;
 
@@ -32,7 +32,7 @@ const create = context => {
         return;
       }
 
-      const fix = fixer => {
+      const fix = (fixer) => {
         const typeDefinitionSource = context.getSourceCode().getText(typeDefinition);
         const fixedTypeDefinitionSource = typeDefinitionSource.replace(/^{([\s\S]*)}$/, '{|$1|}');
         return fixer.replaceText(typeDefinition, fixedTypeDefinitionSource);

@@ -11,7 +11,7 @@ const meta = {
   schema: [{ type: 'string' }],
 };
 
-const create = context => {
+const create = (context) => {
   const [projectName] = context.options;
   if (!projectName) {
     return {};
@@ -23,7 +23,7 @@ const create = context => {
   }
 
   return {
-    CallExpression: node => {
+    CallExpression: (node) => {
       const { callee } = node;
       const args = node.arguments;
       const filenameComponents = filename.match(/src\/(.+?)\/(.+)\/strings.js/);
@@ -54,7 +54,7 @@ const create = context => {
         return;
       }
 
-      const fix = fixer => {
+      const fix = (fixer) => {
         const callSource = context.getSourceCode().getText(node);
         const fixedCallSource = callSource.replace(/\(.*\)/, `('${expectedNamespace}')`);
         return fixer.replaceText(node, fixedCallSource);

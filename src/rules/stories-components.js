@@ -12,7 +12,7 @@ const meta = {
   },
 };
 
-const create = context => {
+const create = (context) => {
   const filepath = context.getFilename();
   if (!PATH_REGEX.test(filepath)) {
     return {};
@@ -21,7 +21,7 @@ const create = context => {
   let found = false;
 
   const dirname = path.dirname(filepath);
-  EXPECTED_FILENAMES.forEach(filename => {
+  EXPECTED_FILENAMES.forEach((filename) => {
     const storyPath = path.join(dirname, filename);
     if (fs.existsSync(storyPath)) {
       found = true;

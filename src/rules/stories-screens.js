@@ -12,7 +12,7 @@ const meta = {
   },
 };
 
-const create = context => {
+const create = (context) => {
   const filepath = context.getFilename();
   if (!PATH_REGEX.test(filepath)) {
     return {};
