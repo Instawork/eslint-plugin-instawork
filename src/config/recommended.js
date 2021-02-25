@@ -106,8 +106,18 @@ const warningRules = {
   'instawork/stories-components': 'warn',
   'instawork/stories-navbars': 'warn',
   'instawork/stories-screens': 'warn',
+  'max-classes-per-file': 'warn',
+  'prefer-object-spread': 'warn',
   'react/destructuring-assignment': ['warn', 'never'],
+  'react/forbid-prop-types': 'warn',
+  'react/jsx-fragments': 'warn',
+  'react/jsx-pascal-case': 'warn',
+  'react/jsx-props-no-spreading': 'warn',
   'react/jsx-sort-props': 'warn',
+  'react/no-deprecated': 'warn',
+  'react/prop-types': 'warn',
+  'react/state-in-constructor': 'warn',
+  'react/static-property-placement': 'warn',
   'sort-keys': 'warn',
 };
 
