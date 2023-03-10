@@ -7,14 +7,10 @@ const disabledRules = {
 
 // Additional rules we think are useful
 const errorRules = {
-  "@typescript-eslint/no-unused-vars": "error",
-  // to enforce using type for object type definitions, can be type or interface 
-  '@typescript-eslint/consistent-type-definitions': [
-    'error',
-    'type'
-  ]
+  // to enforce using type for object type definitions, can be type or interface
+  '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
+  '@typescript-eslint/no-unused-vars': 'error',
 };
-
 
 const rules = {
   ...disabledRules,
@@ -54,8 +50,8 @@ module.exports = {
   env,
   extends: extend$,
   globals,
-  plugins,
   parser,
+  plugins,
   rules,
   settings,
 };
