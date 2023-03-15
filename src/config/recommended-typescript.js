@@ -1,12 +1,16 @@
 // @flow
 
+const commonConfig = require('./config/common-config');
+
 // Default rules that aren't applicable to our projects
 const disabledRules = {
+  ...commonConfig.disabledRules,
   'instawork/flow-annotate': 'off',
 };
 
 // Additional rules we think are useful
 const errorRules = {
+  ...commonConfig.errorRules,
   // to enforce using type for object type definitions, can be type or interface
   '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
   '@typescript-eslint/no-unused-vars': 'error',
@@ -15,6 +19,7 @@ const errorRules = {
 const rules = {
   ...disabledRules,
   ...errorRules,
+  ...commonConfig.warningRules,
 };
 
 // "extends" is an existing keyword, and so we use "extend$"
