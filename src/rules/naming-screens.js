@@ -2,7 +2,7 @@
 
 const util = require('./util');
 
-const PATH_REGEX = /\/src\/screens\/([^/]+?)\/presentation.js$/i;
+const PATH_REGEX = /\/src\/screens\/([^/]+?)\/presentation.(js|ts)$/i;
 const SUFFIX = 'Screen';
 
 const meta = {

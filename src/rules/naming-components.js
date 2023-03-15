@@ -2,7 +2,7 @@
 
 const util = require('./util');
 
-const PATH_REGEX = /\/src\/components\/([^/]+?)\/(presentation|index).js$/i;
+const PATH_REGEX = /\/src\/components\/([^/]+?)\/(presentation|index).(js|ts)$/i;
 
 const meta = {
   docs: {
