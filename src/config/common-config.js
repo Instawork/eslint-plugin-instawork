@@ -121,7 +121,7 @@ const warningRules = {
   'sort-keys': 'warn',
 };
 
-export const commonConfig = {
+module.exports = {
   disabledRules,
   errorRules,
   warningRules,

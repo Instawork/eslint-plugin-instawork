@@ -1,6 +1,6 @@
 // @flow
 
-const commonConfig = require('./config/common-config');
+const commonConfig = require('./common-config');
 
 // Default rules that aren't applicable to our projects
 const disabledRules = {
