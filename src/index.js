@@ -2,6 +2,7 @@
 
 const configs = {
   recommended: require('./config/recommended'),
+  'recommended-typescript': require('./config/recommended-typescript'),
 };
 
 const rules = {

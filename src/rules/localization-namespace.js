@@ -26,7 +26,7 @@ const create = (context) => {
     CallExpression: (node) => {
       const { callee } = node;
       const args = node.arguments;
-      const filenameComponents = filename.match(/src\/(.+?)\/(.+)\/strings.js/);
+      const filenameComponents = filename.match(/src\/(.+?)\/(.+)\/strings.(js|ts)/);
 
       // Ensure that the node is a Localization.scopedTranslator call
       if (!callee) {

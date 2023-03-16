@@ -3,8 +3,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const PATH_REGEX = /\/src\/components\/([^/]+?)\/(presentation|index).js$/i;
-const EXPECTED_FILENAMES = ['stories.js', 'stories/index.js'];
+const PATH_REGEX = /\/src\/components\/([^/]+?)\/(presentation|index).(js|ts)$/i;
+const EXPECTED_FILENAMES = ['stories.js', 'stories/index.js', 'stories.ts', 'stories/index.ts'];
 
 const meta = {
   docs: {

@@ -3,8 +3,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const PATH_REGEX = /\/src\/screens\/([^/]+?)\/presentation.js$/i;
-const EXPECTED_FILENAME = 'stories.js';
+const PATH_REGEX = /\/src\/screens\/([^/]+?)\/presentation.(js|ts)$/i;
+const EXPECTED_FILENAMES = ['stories.js', 'stories.ts'];
 
 const meta = {
   docs: {
@@ -18,16 +18,23 @@ const create = (context) => {
     return {};
   }
 
-  const dirname = path.dirname(filepath);
-  const storyPath = path.join(dirname, EXPECTED_FILENAME);
+  let found = false;
 
-  if (!fs.existsSync(storyPath)) {
+  const dirname = path.dirname(filepath);
+  EXPECTED_FILENAMES.forEach((filename) => {
+    const storyPath = path.join(dirname, filename);
+    if (fs.existsSync(storyPath)) {
+      found = true;
+    }
+  });
+
+  if (!found) {
     context.report({
       loc: {
         end: { col: 0, line: 1 },
         start: { col: 0, line: 1 },
       },
-      message: `'${filepath}' must have an accompanying '${EXPECTED_FILENAME}' file`,
+      message: `'${filepath}' must have an accompanying '${EXPECTED_FILENAMES.join(' or ')}' file`,
     });
   }
 
