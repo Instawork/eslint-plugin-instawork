@@ -26,7 +26,9 @@ const legacyTestCodeWarningRules = {
 
 const legacyTestCodeErrorRules = {};
 
-const storiesDisabledRules = {};
+const storiesDisabledRules = {
+  'no-console': 'off',
+};
 
 const storiesWarningRules = {};
 
