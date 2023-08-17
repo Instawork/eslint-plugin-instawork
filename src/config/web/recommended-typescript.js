@@ -36,6 +36,12 @@ const rules = {
   ...typescriptRules.errorRules,
 };
 
+const settings = {
+  'import/resolver': {
+    typescript: {},
+  },
+};
+
 module.exports = {
   files,
   plugins,
@@ -43,4 +49,5 @@ module.exports = {
   parser,
   parserOptions,
   rules,
+  settings,
 };
