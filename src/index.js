@@ -39,6 +39,7 @@ const rules = {
   'stories-navbars': require('./rules/stories-navbars'),
   'stories-screens': require('./rules/stories-screens'),
   'web-stories-common': require('./rules/web-stories-common'),
+  'web-stories-non-base-components': require('./rules/web-stories-non-base-components');
 };
 
 module.exports = { configs, rules };

@@ -3,7 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const PATH_REGEX = /^web_frontend\/[^/]+\/[^/]+\/components\/.*index\.ts(x)?$/i;
+const PATH_REGEX = /^web_frontend(\/[^\/]+){3,}\/components\/.*index\.ts(x)?$/i;
 const EXPECTED_FILENAMES = ['stories.tsx'];
 
 const meta = {

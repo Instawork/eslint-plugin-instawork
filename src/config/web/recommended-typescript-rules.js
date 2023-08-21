@@ -36,6 +36,7 @@ const warnRules = {
   'no-var': 'warn',
   'prettier/prettier': 'warn',
   'react/jsx-filename-extension': ['warn', { extensions: ['.tsx'] }],
+  'web-stories-non-base-components': 'warn',
 };
 
 const errorRules = {
