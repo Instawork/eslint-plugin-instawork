@@ -39,6 +39,7 @@ const warnRules = {
 };
 
 const errorRules = {
+  'instawork/web-stories-common': 'error',
   'no-console': ['error'],
   '@typescript-eslint/no-redeclare': ['error'],
   '@typescript-eslint/no-explicit-any': ['error'],
