@@ -2,6 +2,10 @@
 
 const typescriptRules = require('./recommended-typescript-rules');
 
+const env = {
+  browser: true,
+};
+
 const files = ['**/*.{ts,tsx}'];
 
 const plugins = ['@typescript-eslint'];
@@ -36,6 +40,7 @@ const settings = {
 };
 
 module.exports = {
+  env,
   extends: extend$,
   files,
   parser,
