@@ -20,7 +20,7 @@ const disabledRules = {
   // Note you must disable the base rule as it can report incorrect errors.
   // See https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/no-use-before-define.md#how-to-use
   'no-use-before-define': 'off',
-  'object-curly-newline': 'off',
+  'object-curly-newline': 'error',
   'prefer-destructuring': 'off',
   'react/destructuring-assignment': 'off',
   'react/jsx-indent': 'off',
