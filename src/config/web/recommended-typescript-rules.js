@@ -76,7 +76,7 @@ const errorRules = {
     2,
     {
       asserts: 'either',
-      controlComponents: ['IWPhoneInput', 'Form.Control'],
+      controlComponents: ['Form.Control'],
       depth: 3,
     },
   ],
