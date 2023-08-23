@@ -36,11 +36,11 @@ const settings = {
 };
 
 module.exports = {
-  files,
-  plugins,
   extends: extend$,
+  files,
   parser,
   parserOptions,
+  plugins,
   rules,
   settings,
 };

@@ -39,9 +39,9 @@ const overrides = [
 ];
 
 module.exports = {
-  parserOptions,
   env,
   extends: extend$,
-  plugins,
   overrides,
+  parserOptions,
+  plugins,
 };
