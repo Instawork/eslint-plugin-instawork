@@ -79,18 +79,7 @@ const errorRules = {
   'import/no-extraneous-dependencies': [
     'error',
     {
-      devDependencies: [
-        '**/stories.*',
-        '**/.storybook/**/*.*',
-        'apps/**/partner_react/**/*.test.ts',
-        'apps/**/partner_react/**/*.test.tsx',
-        'apps/**/partner_react/**/test/**',
-        'web_frontend/**/*.test.ts',
-        'web_frontend/**/*.test.tsx',
-        'web_frontend/**/test/**',
-        'web_frontend/**/__mocks__/*.ts',
-        'web_frontend/common/src/test/setup-tests.ts',
-      ],
+      devDependencies: ['**/stories.*', '**/.storybook/**/*.*', '**/*.ts', '**/*.tsx'],
       peerDependencies: true,
     },
   ],

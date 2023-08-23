@@ -2,14 +2,7 @@
 
 const typescriptRules = require('./recommended-typescript-rules');
 
-const files = [
-  'instawork/ui-webpack/src/**/*.ts',
-  'apps/**/partner_react/**/*.ts',
-  'apps/**/partner_react/**/*.tsx',
-  'web_frontend/**/*.ts',
-  'web_frontend/**/*.tsx',
-  'marketing/ui/src/**/*.ts',
-];
+const files = ['**/*.ts', '**/*.ts'];
 
 const plugins = ['@typescript-eslint'];
 
