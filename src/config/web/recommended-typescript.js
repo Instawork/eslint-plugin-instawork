@@ -6,8 +6,6 @@ const env = {
   browser: true,
 };
 
-const files = ['**/*.{ts,tsx}'];
-
 const plugins = ['@typescript-eslint'];
 
 const extend$ = [
