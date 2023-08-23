@@ -40,7 +40,6 @@ const settings = {
 module.exports = {
   env,
   extends: extend$,
-  files,
   parser,
   parserOptions,
   plugins,
