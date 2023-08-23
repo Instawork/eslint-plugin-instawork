@@ -20,7 +20,7 @@ const disabledRules = {
   // Note you must disable the base rule as it can report incorrect errors.
   // See https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/no-use-before-define.md#how-to-use
   'no-use-before-define': 'off',
-  'object-curly-newline': 'error',
+  'object-curly-newline': 'off',
   'prefer-destructuring': 'off',
   'react/destructuring-assignment': 'off',
   'react/jsx-indent': 'off',
@@ -50,13 +50,6 @@ const errorRules = {
     {
       ts: 'never',
       tsx: 'never',
-    },
-  ],
-  'import/no-extraneous-dependencies': [
-    'error',
-    {
-      devDependencies: ['**/stories.*', '**/.storybook/**/*.*', '**/*.ts', '**/*.tsx'],
-      peerDependencies: true,
     },
   ],
   'import/order': [
