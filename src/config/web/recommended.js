@@ -1,7 +1,5 @@
 // @flow
 
-const webTypescriptConfig = require('./recommended-typescript');
-
 const parserOptions = {
   ecmaVersion: 12,
   sourceType: 'module',
@@ -20,9 +18,6 @@ const extend$ = [
 ];
 
 const overrides = [
-  {
-    ...webTypescriptConfig,
-  },
   // ignore console statements in storybook file and test files
   {
     files: [
