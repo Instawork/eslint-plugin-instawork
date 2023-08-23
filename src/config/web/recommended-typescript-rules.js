@@ -68,7 +68,6 @@ const errorRules = {
       pathGroups: [
         { group: 'external', pattern: '@*', position: 'after' },
         { group: 'external', pattern: '@*/**', position: 'after' },
-        { group: 'internal', pattern: 'microFECommon/**', position: 'before' },
       ],
       pathGroupsExcludedImportTypes: ['@*', '@*/**'],
     },
