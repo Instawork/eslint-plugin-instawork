@@ -2,7 +2,7 @@
 
 const typescriptRules = require('./recommended-typescript-rules');
 
-const files = ['**/*.ts', '**/*.tsx'];
+const files = ['**/*.ts(x)'];
 
 const plugins = ['@typescript-eslint'];
 
