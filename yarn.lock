@@ -2305,7 +2305,7 @@ eslint-import-resolver-node@^0.3.4:
     debug "^2.6.9"
     resolve "^1.13.1"
 
-eslint-import-resolver-typescript@^3.6.0:
+eslint-import-resolver-typescript@3.6.0:
   version "3.6.0"
   resolved "https://registry.yarnpkg.com/eslint-import-resolver-typescript/-/eslint-import-resolver-typescript-3.6.0.tgz#36f93e1eb65a635e688e16cae4bead54552e3bbd"
   integrity sha512-QTHR9ddNnn35RTxlaEnx2gCxqFlF2SEN0SE2d17SqwyM7YOSI2GHWRYp5BiRkObTUNYPupC/3Fq2a0PpT+EKpg==
@@ -2369,6 +2369,7 @@ eslint-plugin-import@2.22.1:
     eslint-config-airbnb "18.2.1"
     eslint-config-prettier "8.0.0"
     eslint-import-resolver-babel-module "5.2.0"
+    eslint-import-resolver-typescript "3.6.0"
     eslint-plugin-flowtype "5.3.1"
     eslint-plugin-import "2.22.1"
     eslint-plugin-jsx-a11y "6.4.1"
