@@ -3,6 +3,8 @@
 const configs = {
   recommended: require('./config/recommended'),
   'recommended-typescript': require('./config/recommended-typescript'),
+  'recommended-web': require('./config/recommended-web'),
+  'recommended-web-ts': require('./config/web/recommended-typescript'),
 };
 
 const rules = {
