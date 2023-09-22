@@ -65,6 +65,9 @@ const errorRules = {
       pathGroupsExcludedImportTypes: ['@*', '@*/**'],
     },
   ],
+  'instawork/helpers-utils-tests': 'error',
+  'instawork/services-tests': 'error',
+  'instawork/store-tests': 'error',
   'instawork/stories-components': 'error',
   'jsx-a11y/label-has-associated-control': [
     2,

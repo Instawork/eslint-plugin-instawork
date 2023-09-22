@@ -3,7 +3,6 @@
 const fs = require('fs');
 const path = require('path');
 
-// const PATH_REGEX = /\/(src|web_frontend)\/([^/]+?)\/components\/([^/]+?)\/(presentation|index).(js|ts)$/i;
 const PATH_REGEX = /\/components\/([^/]+?)\/(presentation|index).(js|ts)$/i;
 const EXPECTED_FILENAMES = [
   'stories.js',
