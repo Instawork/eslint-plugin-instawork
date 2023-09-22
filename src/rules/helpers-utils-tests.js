@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 
 const PATH_REGEX = /\/(helpers|utils)\/([^/]+?)\/(index).(js|ts)$/i;
-const EXPECTED_SUFFIX_REGEX = /.*\.(test|spec)\.(js|jsx|ts|tsx)$/i;
+const EXPECTED_SUFFIX_REGEX = /.*\.(test|spec)\.(js|ts)$/i;
 
 const meta = {
   docs: {
@@ -34,7 +34,7 @@ const create = (context) => {
         end: { col: 0, line: 1 },
         start: { col: 0, line: 1 },
       },
-      message: `'${filepath}' must have an accompanying test file matching: *.test.(ts|tsx|js|jsx) or *.spec.(ts|tsx|js|jsx)`,
+      message: `'${filepath}' must have an accompanying test file matching: *.test.(js|ts) or *.spec.(js|ts)`,
     });
   }
 
