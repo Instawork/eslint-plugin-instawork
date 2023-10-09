@@ -12,6 +12,7 @@
   "overrides": [
     {
       "files": ["*.ts", "*.tsx"],
+      "extends": ["plugin:import/typescript"],
       "plugins": ["@typescript-eslint"],
       "parser": "@typescript-eslint/parser",
       "parserOptions": {
