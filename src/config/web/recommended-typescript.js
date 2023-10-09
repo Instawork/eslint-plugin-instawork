@@ -1,6 +1,6 @@
 // @flow
 
-const typescriptRules = require('./recommended-typescript-rules.ts');
+const typescriptRules = require('./recommended-typescript-rules');
 
 const env = {
   browser: true,

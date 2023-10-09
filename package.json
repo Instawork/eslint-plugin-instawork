@@ -25,6 +25,7 @@
     "watch": "node node_modules/eslint-plugin-instawork/scripts/watch"
   },
   "dependencies": {
+    "@babel/preset-typescript": "^7.23.0",
     "@typescript-eslint/eslint-plugin": "5.54.0",
     "@typescript-eslint/parser": "5.54.0",
     "babel-plugin-module-resolver": "4.1.0",
