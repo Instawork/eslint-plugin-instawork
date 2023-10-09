@@ -1,5 +1,3 @@
-// @flow
-
 const parserOptions = {
   ecmaVersion: 12,
   sourceType: 'module',
