@@ -8,5 +8,13 @@
   "rules": {
     "instawork/error-object": 0,
     "global-require": 0
-  }
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "instawork/flow-annotate": "off"
+      }
+    }
+  ]
 }
