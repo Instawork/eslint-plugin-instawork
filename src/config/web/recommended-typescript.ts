@@ -37,12 +37,4 @@ const settings = {
   },
 };
 
-module.exports = {
-  env,
-  extends: extend$,
-  parser,
-  parserOptions,
-  plugins,
-  rules,
-  settings,
-};
+export { env, extend$ as extends, parser, parserOptions, plugins, rules, settings };
