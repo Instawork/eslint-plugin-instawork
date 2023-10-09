@@ -8,9 +8,17 @@ jobs:
       - checkout
       - run: yarn
       - run: yarn test
+  tslint:
+    docker:
+      - image: cimg/node:16.14.2
+    steps:
+      - checkout
+      - run: yarn
+      - run: yarn tsc --noEmit --strict false
 
 workflows:
   version: 2
   test:
     jobs:
       - test
+      - tslint
