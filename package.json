@@ -59,7 +59,7 @@
     "prettier": "2.2.1",
     "pretty-quick": "3.1.0",
     "react": "17.0.1",
-    "ts-node": "^10.9.1",
+    "ts-node": "10.9.1",
     "typescript": "<5.0.0"
   }
 }
