@@ -3,12 +3,6 @@
 const path = require('path');
 
 module.exports = {
-  meta: {
-    type: 'suggestion',
-    docs: {
-      description: 'Enforce allowed imports from specific folders',
-    },
-  },
   create(context) {
     return {
       ImportDeclaration(node) {
@@ -31,10 +25,16 @@ module.exports = {
         }
 
         context.report({
-          node,
           message: `Import from '${node.source.value}' is not allowed`,
+          node,
         });
       },
     };
+  },
+  meta: {
+    docs: {
+      description: 'Enforce allowed imports from specific folders',
+    },
+    type: 'suggestion',
   },
 };
