@@ -1,5 +1,7 @@
 // @flow
 
+const path = require('path');
+
 module.exports = {
   meta: {
     type: 'suggestion',
@@ -10,19 +12,28 @@ module.exports = {
   create(context) {
     return {
       ImportDeclaration(node) {
-        const importPath = node.source.value;
+        const options = context?.options?.[0] ?? { allowed: [] };
 
-        // Define your not allowed prefix here
-        const notAllowedPrefix = ['microFE/'];
-
-        const isNotAllowed = notAllowedPrefix.some((prefix) => importPath.startsWith(prefix));
-
-        if (isNotAllowed) {
-          context.report({
-            node,
-            message: `Import from '${importPath}' is not allowed`,
-          });
+        if (!node.source.value.startsWith(`${options.appsDirectoryShorthandPrefix}/`)) {
+          return;
         }
+
+        const [importPathPrefix] = node.source.value
+          .replace(`${options.appsDirectoryShorthandPrefix}/`, '')
+          .split('/');
+        const [currentPathPrefix] = context
+          .getFilename()
+          .replace(`${path.resolve(process.cwd(), options.appsDirectory)}/`, '')
+          .split('/');
+
+        if ([...options.allowed, currentPathPrefix].includes(importPathPrefix)) {
+          return;
+        }
+
+        context.report({
+          node,
+          message: `Import from '${node.source.value}' is not allowed`,
+        });
       },
     };
   },
