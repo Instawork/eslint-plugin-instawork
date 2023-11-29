@@ -17,6 +17,7 @@ const rules = {
   'exact-object-types': require('./rules/exact-object-types'),
   'flow-annotate': require('./rules/flow-annotate'),
   'helpers-utils-tests': require('./rules/helpers-utils-tests'),
+  'import-common': require('./rules/import-common'),
   'import-components': require('./rules/import-components'),
   'import-modules': require('./rules/import-modules'),
   'import-navbar': require('./rules/import-navbar'),
