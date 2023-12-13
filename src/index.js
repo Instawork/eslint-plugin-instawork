@@ -27,6 +27,7 @@ const rules = {
   'import-services': require('./rules/import-services'),
   'localization-namespace': require('./rules/localization-namespace'),
   'localization-string-key': require('./rules/localization-string-key'),
+  'manual-use-query': require('./rules/manual-use-query'),
   'naming-components': require('./rules/naming-components'),
   'naming-overlays': require('./rules/naming-overlays'),
   'naming-screens': require('./rules/naming-screens'),
