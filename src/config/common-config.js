@@ -100,7 +100,6 @@ const errorRules = {
 const warningRules = {
   'instawork/deprecate-components': 'warn',
   'instawork/deprecate-stateless': 'warn',
-  'instawork/import-common': 'warn',
   'instawork/import-modules': 'warn',
   'instawork/import-services': 'warn',
   'instawork/pure-components': 'warn',
