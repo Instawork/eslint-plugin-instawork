@@ -1,0 +1,55 @@
+#!/usr/bin/env node
+
+const childProcess = require("child_process");
+const chokidar = require("chokidar");
+const path = require("path");
+const ROOT_DIR = path.join(__dirname, "../../..");
+const PACKAGE_JSON = path.join(ROOT_DIR, "package.json");
+
+const { dependencies, devDependencies } = require(PACKAGE_JSON);
+const DEPENDENCIES = {
+  ...dependencies,
+  ...devDependencies
+};
+
+const PROJECTS_PATHS = Object.keys(DEPENDENCIES).reduce(
+  (projectsPaths, dependency) => {
+    const fileDependency = DEPENDENCIES[dependency].match(/^file:(.*)$/);
+    if (fileDependency) {
+      const projectPath = path.join(ROOT_DIR, fileDependency[1]);
+      return [...projectsPaths, projectPath];
+    }
+    return projectsPaths;
+  },
+  []
+);
+
+const EVENTS = {
+  add: "📄",
+  addDir: "📁",
+  change: "♻️ ",
+  unlink: "❌"
+};
+
+PROJECTS_PATHS.forEach(projectPath => {
+  const projectName = path.basename(projectPath);
+  const projectSrcPath = path.join(projectPath, "src");
+  const installedModuleSrcPath = path.join(
+    ROOT_DIR,
+    "node_modules",
+    projectName,
+    "src"
+  );
+  console.log(`Watching ${projectPath}…`);
+  chokidar
+    .watch(projectSrcPath, { ignoreInitial: true })
+    .on("all", (event, absolutePath) => {
+      const relativePath = absolutePath.replace(projectSrcPath, "");
+      const targetAbsolutePath = path.dirname(
+        path.join(installedModuleSrcPath, relativePath)
+      );
+      console.log(`${EVENTS[event]} - ${targetAbsolutePath}`);
+      const cmd = `rsync -v -r --delete ${absolutePath} ${targetAbsolutePath}/`;
+      childProcess.execSync(cmd);
+    });
+});

@@ -1,5 +1,3 @@
-// @flow
-
 const disabledRules = {
   'comma-dangle': 'off',
   'func-call-spacing': 'off',
