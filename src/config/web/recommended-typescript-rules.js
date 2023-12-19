@@ -67,6 +67,7 @@ const errorRules = {
   ],
   'instawork/helpers-utils-tests': 'error',
   'instawork/import-disallowed': 'error',
+  'instawork/manual-use-query': 'error',
   'instawork/services-tests': 'error',
   'instawork/store-tests': 'error',
   'instawork/stories-components': 'error',
