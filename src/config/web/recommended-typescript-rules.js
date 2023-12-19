@@ -66,9 +66,9 @@ const errorRules = {
     },
   ],
   'instawork/helpers-utils-tests': 'error',
+  'instawork/import-disallowed': 'error',
   'instawork/services-tests': 'error',
   'instawork/store-tests': 'error',
-  'instawork/import-disallowed': 'error',
   'instawork/stories-components': 'error',
   'jsx-a11y/label-has-associated-control': [
     2,
