@@ -48,6 +48,14 @@ const errorRules = {
       ],
     },
   ],
+  'instawork/component-logic-loc': [
+    'error',
+    {
+      max: 100,
+      skipBlankLines: true,
+      skipComments: true,
+    },
+  ],
   'instawork/component-methods-use-arrows': 'error',
   'instawork/deprecate-bound': 'error',
   'instawork/error-object': 'error',

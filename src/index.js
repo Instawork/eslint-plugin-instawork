@@ -8,6 +8,7 @@ const configs = {
 };
 
 const rules = {
+  'component-logic-loc': require('./rules/component-logic-loc'),
   'component-methods-use-arrows': require('./rules/component-methods-use-arrows'),
   'deprecate-bound': require('./rules/deprecate-bound'),
   'deprecate-components': require('./rules/deprecate-components'),
