@@ -3,7 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const PATH_REGEX = /\/(store|store-*)\/([^/]+?)\/(index).(js|ts)$/i;
+const PATH_REGEX = /\/(store|store-*)\/(([^/]+?)\/)?(index).(js|ts)$/i;
 const EXPECTED_SUFFIX_REGEX = /.*\.(test|spec)\.(js|ts)$/i;
 
 const meta = {
