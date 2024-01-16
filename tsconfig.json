@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "sourceMap": true,
+    "target": "ES6",
+    "module": "commonjs",
+    "declaration": true,
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "outDir": "dist",
+    "lib": [
+      "ESNext"
+    ],
+  },
+  "include": ["src/**/*.ts", "node_modules/eslint-plugin-instawork/src/**/*.ts"],
+  "ts-node": {
+    "transpileOnly": true,
+    // these options are overrides used only by ts-node
+    // same as the --compilerOptions flag and the TS_NODE_COMPILER_OPTIONS environment variable
+    "compilerOptions": {
+      "module": "commonjs",
+      "target": "ES3"
+    }
+  }
+}
