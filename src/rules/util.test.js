@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 // @flow
 
 const util = require('./util');
@@ -124,5 +125,42 @@ describe('getExpectedWebStoryTitle', () => {
     const filePath = 'web_frontend/apps/booking-flow/components/cards/tpb-card-details/stories.tsx';
     const expectedTitle = 'Apps/BookingFlow/Components/Cards/TpbCardDetails';
     expect(util.getExpectedWebStoryTitle(filePath)).toBe(expectedTitle);
+  });
+});
+
+describe('isFirstLevelViewIndex', () => {
+  test('matches a first-level view index file in common/views/', () => {
+    const filePath = 'web_frontend/common/views/view-name/index.ts';
+    expect(util.isFirstLevelViewIndex(filePath)).toBe(true);
+  });
+
+  test('matches a first-level view index file in common/src/views/', () => {
+    const filePath = 'web_frontend/common/src/views/view-name/index.ts';
+    expect(util.isFirstLevelViewIndex(filePath)).toBe(true);
+  });
+
+  test('does not match a first-level components index file in common/src/views/', () => {
+    const filePath = 'web_frontend/common/src/views/components/my-componentindex.ts';
+    expect(util.isFirstLevelViewIndex(filePath)).toBe(false);
+  });
+
+  test('does not match a file in a subdirectory of a first-level view', () => {
+    const filePath = 'web_frontend/common/views/view-name/subfolder/index.ts';
+    expect(util.isFirstLevelViewIndex(filePath)).toBe(false);
+  });
+
+  test('does not match a view component index file in common/src/views/components/', () => {
+    const filePath = 'web_frontend/common/src/views/components/component-name/index.ts';
+    expect(util.isFirstLevelViewIndex(filePath)).toBe(false);
+  });
+
+  test('does not match a file that is not index.ts', () => {
+    const filePath = 'web_frontend/common/src/views/view-name/not-index.ts';
+    expect(util.isFirstLevelViewIndex(filePath)).toBe(false);
+  });
+
+  test('does not match a file in a completely different directory', () => {
+    const filePath = 'web_frontend/unrelated/directory/structure/index.ts';
+    expect(util.isFirstLevelViewIndex(filePath)).toBe(false);
   });
 });
