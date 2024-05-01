@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 // @flow
 
 const humps = require('humps');
@@ -158,4 +159,33 @@ module.exports.getSuperclassName = (classExpressionNode) => {
   }
 
   throw new Error(`Unexpected superClass type: ${superClass.type}`);
+};
+
+/**
+ * Returns the expected story title for web (based on Instawork conventions) given the story filepath
+ * e.g. web_frontend/<app_group>/booking-flow/components/tpb-card => Apps/BookingFlow/Components/TpbCard
+ * e.g. web_frontend/common/src/components/iw-badge => Common/Components/IwBadge
+ * @param {*} filePath
+ * @returns expected story title
+ */
+module.exports.getExpectedWebStoryTitle = (filePath) => {
+  const normalizedPath = filePath.replace(/\\/g, '/'); // Convert backslashes to forward slashes
+  const pathWithoutFile = normalizedPath.substring(0, normalizedPath.lastIndexOf('/'));
+  const pathParts = pathWithoutFile.split('/').filter((part) => part !== 'src'); // Split for parts and exclude "src"
+
+  // Extract the app group and app name
+  const webFrontendIndex = pathParts.indexOf('web_frontend');
+  const appGroup = pathParts[webFrontendIndex + 1];
+  const appName = pathParts[webFrontendIndex + 2];
+
+  const titlePrefix = appGroup === 'common' ? 'Common' : 'Apps';
+  let title = `${titlePrefix}/${humps.pascalize(appName)}`;
+  const remainingSections = pathParts.slice(webFrontendIndex + 3);
+
+  // Append the remaining sections to the title
+  remainingSections.forEach((section) => {
+    title += `/${humps.pascalize(section)}`;
+  });
+
+  return title;
 };

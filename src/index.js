@@ -45,6 +45,7 @@ const rules = {
   'stories-name': require('./rules/stories-name'),
   'stories-navbars': require('./rules/stories-navbars'),
   'stories-screens': require('./rules/stories-screens'),
+  'web-stories-name': require('./rules/web-stories-name'),
 };
 
 module.exports = { configs, rules };
