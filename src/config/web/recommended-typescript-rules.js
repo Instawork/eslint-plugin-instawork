@@ -72,7 +72,7 @@ const errorRules = {
   'instawork/store-tests': 'error',
   'instawork/stories-components': 'error',
   'instawork/web-common-view-export': 'error',
-  'instawork/web-stories-name': 'error',
+  'instawork/web-stories-title': 'error',
   'jsx-a11y/label-has-associated-control': [
     2,
     {

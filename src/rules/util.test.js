@@ -102,32 +102,6 @@ describe('getExpectedClassNameForPath', () => {
   });
 });
 
-describe('getExpectedWebStoryTitle', () => {
-  test('it should correctly compose the story title of an App story', () => {
-    const filePath = 'web_frontend/apps/booking-flow/components/tpb-card/stories.tsx';
-    const expectedTitle = 'Apps/BookingFlow/Components/TpbCard';
-    expect(util.getExpectedWebStoryTitle(filePath)).toBe(expectedTitle);
-  });
-
-  test('it should correctly compose the story title of a Common component story', () => {
-    const filePath = 'web_frontend/common/src/components/iw-badge/stories.tsx';
-    const expectedTitle = 'Common/Components/IwBadge';
-    expect(util.getExpectedWebStoryTitle(filePath)).toBe(expectedTitle);
-  });
-
-  test('it should handle file paths with backslashes', () => {
-    const filePath = 'web_frontend\\common\\src\\components\\iw-badge/stories.tsx';
-    const expectedTitle = 'Common/Components/IwBadge';
-    expect(util.getExpectedWebStoryTitle(filePath)).toBe(expectedTitle);
-  });
-
-  test('it should correctly transform a filepath with nested directories', () => {
-    const filePath = 'web_frontend/apps/booking-flow/components/cards/tpb-card-details/stories.tsx';
-    const expectedTitle = 'Apps/BookingFlow/Components/Cards/TpbCardDetails';
-    expect(util.getExpectedWebStoryTitle(filePath)).toBe(expectedTitle);
-  });
-});
-
 describe('isFirstLevelViewIndex', () => {
   test('matches a first-level view index file in common/views/', () => {
     const filePath = 'web_frontend/common/views/view-name/index.ts';
