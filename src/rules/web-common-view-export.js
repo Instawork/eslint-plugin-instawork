@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 // @flow
 
 const util = require('./util');
@@ -19,8 +18,11 @@ const create = (context) => {
     Program(node) {
       let exportCount = 0;
       node.body.forEach((childNode) => {
-        if (childNode.type === 'ExportNamedDeclaration' || childNode.type === 'ExportDefaultDeclaration') {
-            exportCount += 1;
+        if (
+          childNode.type === 'ExportNamedDeclaration' ||
+          childNode.type === 'ExportDefaultDeclaration'
+        ) {
+          exportCount += 1;
         }
       });
 
