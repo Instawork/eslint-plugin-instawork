@@ -159,3 +159,15 @@ module.exports.getSuperclassName = (classExpressionNode) => {
 
   throw new Error(`Unexpected superClass type: ${superClass.type}`);
 };
+
+/**
+ * Returns whether or not a path points to a first-level common view index file
+ * The pattern matches paths like "common/views/view-name/index.ts"
+ * and rejects deeper paths like "common/views/view-name/subfolder/index.ts"
+ * and rejects view components paths like "common/views/components/component-name/index.ts"
+ * */
+module.exports.isFirstLevelViewIndex = (filePath) => {
+  const firstLevelViewIndexPattern = /\/common\/(src\/)?views\/(?!components\/)[^/]+\/index\.ts$/;
+  const normalizedFilePath = filePath.replace(/\\/g, '/');
+  return firstLevelViewIndexPattern.test(normalizedFilePath);
+};
