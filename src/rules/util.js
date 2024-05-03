@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 // @flow
 
 const humps = require('humps');
