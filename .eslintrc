@@ -5,6 +5,13 @@
     "jest": true,
     "node": true
   },
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "requireConfigFile": true, // This can be true if you have a Babel configuration file
+    "babelOptions": {
+      "presets": ["@babel/preset-env", "jest"] // Adapt or add other Babel presets as needed
+    }
+  },
   "rules": {
     "instawork/error-object": 0,
     "global-require": 0
