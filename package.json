@@ -21,7 +21,8 @@
     "release:patch": "yarn version --patch",
     "release:minor": "yarn version --minor",
     "release:major": "yarn version --major",
-    "test": "eslint src --max-warnings 0 && jest src"
+    "test": "eslint src --max-warnings 0 && jest src",
+    "postinstall": "patch-package"
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "7.6.0",
@@ -37,7 +38,9 @@
     "eslint-plugin-prettier": "3.3.1",
     "eslint-plugin-react": "7.22.0",
     "eslint-plugin-react-hooks": "4.2.0",
-    "humps": "2.0.1"
+    "humps": "2.0.1",
+    "patch-package": "8.0.0",
+    "postinstall-postinstall": "2.1.0"
   },
   "peerDependencies": {
     "@babel/eslint-parser": "7.24.5",
