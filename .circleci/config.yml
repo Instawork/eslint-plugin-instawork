@@ -3,9 +3,10 @@ version: 2
 jobs:
   test:
     docker:
-      - image: cimg/node:18.20.2
+      - image: cimg/node:18.18.0
     steps:
       - checkout
+      - run: yarn --prod # install only prod dependencies first to trigger postinstall patch-package script
       - run: yarn
       - run: yarn test
 
