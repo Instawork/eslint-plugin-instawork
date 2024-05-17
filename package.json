@@ -15,17 +15,19 @@
   },
   "license": "MIT",
   "scripts": {
+    "dev-sync": "rsync -av --exclude='node_modules' --exclude='.git' --exclude='.idea' ./ ./node_modules/eslint-plugin-instawork/",
+    "dev-test": "yarn dev-sync; yarn test",
     "prettify": "pretty-quick --staged",
     "preversion": "yarn test",
     "postversion": "yarn publish --new-version $npm_package_version && git push --follow-tags",
     "release:patch": "yarn version --patch",
     "release:minor": "yarn version --minor",
     "release:major": "yarn version --major",
-    "test": "eslint src --max-warnings 0 && jest src"
+    "test": "ts-node --ignore \"(?:^|/)node_modules/(?!eslint-plugin-instawork/src/)\" node_modules/.bin/eslint src --max-warnings 0 && jest src"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "5.54.0",
-    "@typescript-eslint/parser": "5.54.0",
+    "@typescript-eslint/eslint-plugin": "6.9.1",
+    "@typescript-eslint/parser": "6.9.1",
     "babel-plugin-module-resolver": "4.1.0",
     "eslint-config-airbnb": "18.2.1",
     "eslint-config-prettier": "8.0.0",
@@ -49,12 +51,15 @@
     "@babel/eslint-parser": "7.13.4",
     "@babel/preset-env": "7.13.5",
     "@babel/runtime": "7.13.6",
+    "@types/node": "20.8.10",
     "babel-eslint": "10.1.0",
     "eslint": "7.20.0",
     "eslint-plugin-instawork": "file:.",
     "jest": "26.6.3",
     "prettier": "2.2.1",
     "pretty-quick": "3.1.0",
-    "react": "17.0.1"
+    "react": "17.0.1",
+    "ts-node": "10.9.1",
+    "typescript": "<5.0.0"
   }
 }

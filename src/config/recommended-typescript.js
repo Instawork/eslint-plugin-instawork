@@ -22,14 +22,17 @@ const rules = {
   ...commonConfig.warningRules,
 };
 
+const rootExtends = ['plugin:instawork/recommended'];
+
 // "extends" is an existing keyword, and so we use "extend$"
 const extend$ = [
-  'eslint:recommended',
   'plugin:@typescript-eslint/recommended',
   'plugin:@typescript-eslint/eslint-recommended',
   'airbnb',
   'airbnb/hooks',
 ];
+
+const files = ['*.ts', '*.tsx'];
 
 const plugins = ['@typescript-eslint', 'prettier'];
 
@@ -52,11 +55,17 @@ const settings = {
 };
 
 module.exports = {
-  env,
-  extends: extend$,
-  globals,
-  parser,
-  plugins,
-  rules,
-  settings,
+  extends: rootExtends,
+  overrides: [
+    {
+      env,
+      extends: extend$,
+      files,
+      globals,
+      parser,
+      plugins,
+      rules,
+      settings,
+    },
+  ],
 };

@@ -1,5 +1,5 @@
 {
-  "extends": "plugin:instawork/recommended",
+  "extends": "plugin:instawork/recommended-typescript",
   "plugins": [ "instawork" ],
   "env": {
     "jest": true,
