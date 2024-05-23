@@ -22,7 +22,7 @@
     "release:minor": "yarn version --minor",
     "release:major": "yarn version --major",
     "test": "eslint src --max-warnings 0 && jest src",
-    "postinstall": "patch-package"
+    "prepare": "patch-package"
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "7.6.0",
