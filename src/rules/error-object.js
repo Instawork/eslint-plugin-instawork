@@ -24,9 +24,9 @@ const create = (context) => ({
         context.report(node, `'${className}' should be named '${expectedName}'`);
       } else {
         const namePropertyNode = node.body.body.find(
-          (n) => n.type === 'ClassProperty' && n.key.name === 'name',
+          (n) => ['ClassProperty', 'PropertyDefinition'].includes(n.type) && n.key.name === 'name',
         );
-        if (!namePropertyNode || namePropertyNode.value.value !== className) {
+        if (!namePropertyNode || namePropertyNode?.value?.value !== className) {
           context.report(
             node,
             `'${className}' should have an instance property 'name' set to '${expectedName}'`,
